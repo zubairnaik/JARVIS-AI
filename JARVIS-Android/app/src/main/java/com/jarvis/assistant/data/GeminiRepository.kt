@@ -65,8 +65,19 @@ class GeminiRepository {
         }
 
         val payload = JSONObject().apply {
-            put("systemInstruction", systemInstruction)
-            put("contents", contentsArray)
+    put("systemInstruction", systemInstruction)
+    put("contents", contentsArray)
+
+    put(
+        "tools",
+        JSONArray().put(
+            JSONObject().put(
+                "google_search",
+                JSONObject()
+            )
+        )
+    )
+        }
         }
 
         val url =
