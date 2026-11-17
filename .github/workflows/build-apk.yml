@@ -31,11 +31,11 @@ jobs:
       - name: Install SDK
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
-                    - name: Build APK
-          env:
-            GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          run: gradle assembleDebug
-          working-directory: JARVIS-Android
+      - name: Build APK
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: gradle assembleDebug
+        working-directory: JARVIS-Android
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
